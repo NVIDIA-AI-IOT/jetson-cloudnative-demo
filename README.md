@@ -44,7 +44,7 @@ To run the demo containers individually, please refer to the instructions in the
 
 -   [DeepStream Container with people detection](https://ngc.nvidia.com/catalog/containers/nvidia:deepstream-peopledetection)    
 -   [Pose container with pose detection](https://ngc.nvidia.com/catalog/containers/nvidia:jetson-pose)
--   [Gaze container with gaze container](https://ngc.nvidia.com/catalog/containers/nvidia:jetson-gaze)
+-   [Gaze container with gaze detection](https://ngc.nvidia.com/catalog/containers/nvidia:jetson-gaze)
 -   [Voice container with speech recognition and Natural Language Processing](https://ngc.nvidia.com/catalog/containers/nvidia:jetson-voice)
 
 ### Running the Cloud-Native Demo
