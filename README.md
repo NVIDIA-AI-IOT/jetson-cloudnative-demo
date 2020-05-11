@@ -64,9 +64,7 @@ First format the NVMe and then prepare the mount point to mount the NVMe:
 
 ``` bash
 sudo mkfs.ext4 /dev/nvme0n1
-
 sudo mkdir /home/nvidia/nvme
-
 sudo mount /dev/nvme0n1 /home/nvidia/nvme
 ```
 Once the NVMe is installed and mounted, add the following to /etc/fstab file to automount the NVMe storage and then reboot the developer kit:
@@ -82,9 +80,7 @@ Note that the second command in the box below is optional and is required only i
 
 ``` bash
 sudo mkdir /home/nvidia/nvme/docker
-
 sudo mv /var/lib/docker/* /home/nvidia/nvme/docker/.
-
 sudo ln -s /home/nvidia/nvme/docker /var/lib/docker
 ```
   
@@ -92,12 +88,9 @@ sudo ln -s /home/nvidia/nvme/docker /var/lib/docker
 Next, create a file swap on NVMe by following these instructions:
 
 ``` bash
-Turn off zram:
-
+# Turn off zram:
 cd /etc/systemd
-
 sudo mv nvzramconfig.sh nvzramconfig.sh.orig
-
 sudo reboot
 ```
 
@@ -105,13 +98,9 @@ Add swap file on nvme and verify swap
 
 ``` bash
 sudo fallocate -l 32G /home/nvidia/nvme/swapfile
-
 sudo chmod 600 /home/nvidia/nvme/swapfile
-
 sudo mkswap /home/nvidia/nvme/swapfile
-
 sudo swapon /home/nvidia/nvme/swapfile
-
 sudo swapon -s
 ```
   
@@ -127,8 +116,6 @@ Reboot the developer kit after saving the changes to /etc/fstab
 #### Pulling the Containers
 
 Pull the 4 demo containers using the pull instruction mentioned in the demo container’s NGC page.
-
-  
 
 #### Running the Demo
 
@@ -147,14 +134,9 @@ Launch the demo
 sudo ./run_demo.sh
 ```
   
-  
-
 -   The script will ask you to ensure that the USB Headset with Mic is connected. Once you make sure it is, please hit the Enter key.
-    
 -   The script will take approximately two and half minutes to launch all four containers, and run the concurrent inference workloads.
-    
 -   We recommend that you CLOSE all other applications (e.g, Chrome browser, Word document, etc.) and that you do not interact with the containers during the launch process because it is memory intensive and interactions may cause further slowdown. These containers were created for demo purpose only and (unlike real-world applications) are not optimized for memory and system resource usage. .
-    
 -   When all four containers are successfully loaded, you can now start interacting with the demo.
 
 Top Left Quadrant - People Detection Container
@@ -166,13 +148,9 @@ Top Right Quadrant - Natural Language Processing Container
 The top right quadrant of the demo is running a containerized Natural Language Processing (NLP) demo using the demanding BERT NLP neural network. This demo takes your questions through voice input on specific topics and provides relevant answers based on the content available under each topic. Please follow these instructions to experience this demo.
 
 1.  Select one of the several available topics by using the left/right arrow key on your keyboard.
-    
 2.  Read the content of each topic to come up with a question.
-    
 3.  Press the ‘space’ key on the keyboard and keep it pressed while asking your question into the microphone of the headset. Please speak slowly and loudly and ask your question. For example, under the topic titled GTC, you may want to ask questions such as “What is GTC?” or “Who is presenting the keynote”, “At what time is the keynote?”, “where is room 2?” and other questions. If relevant information is available in the content for your question, then the NLP network will provide a text answer that is shown on the screen. Note that the very first question may take a couple of seconds to register.
-    
 4.  You can also create your own topic, add your content and ask questions on that content using the “New” topic menu item.
-    
 5.  These neural networks have been trained but are not finely optimized like in commercial assistants such as Google Assistant or Alexa. These are provided only for demo purposes to convey that Jetson NX is capable of running multiple networks concurrently and deliver real-time performance. A commercial application using Jetson will spend more time fine-tuning the neural network performance.
     
 
