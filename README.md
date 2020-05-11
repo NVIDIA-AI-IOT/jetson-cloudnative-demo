@@ -7,75 +7,44 @@ Consider a service robot in a retail setting providing customer service, like in
 These robots need to perform the following tasks:
 
 -   Identify humans
-    
 -   Detect when a customer is talking to it
-    
 -   Understand where a customer is pointing to while interacting with it
-    
 -   Understand what a customer is asking
-    
 -   Provide useful answers.
 
 Hence these robots needs multiple AI models such as:
 
 -   People identification to identify humans
-    
 -   Gaze detection to detect when a customer is talking to it (as opposed to talking to someone else)
-    
 -   Pose detection to detect customer’s pose
-    
 -   Speech recognition to detect words in sentences spoken by the customer
-    
 -   Natural language processing to understand the sentence, including context, to provide relevant answers back to the customer.
     
 
 Following the cloud native approach to application development, these individual models can be developed independently. Once an individual model is developed, it can be containerized with all dependencies included, and deployed to any Jetson device.
 
 For this demo review we have developed and containerized the models, and have hosted them on [Nvidia GPU Cloud](https://www.nvidia.com/en-us/gpu-cloud/). The demo runs seven models simultaneously as described below:
--   [DeepStream Container with people detection](https://ngc.nvidia.com/catalog/containers/nvidia:deepstream-peopledetection):
+- [DeepStream Container with people detection](https://ngc.nvidia.com/catalog/containers/nvidia:deepstream-peopledetection):
+	- Resnet-18 model with input image size of 960X544X3. The model was converted from TensorFlow to TensorRT.
+- [Pose container with pose detection](https://ngc.nvidia.com/catalog/containers/nvidia:jetson-pose):
+	- Resnet-18 model with input image resolution of 224X224. The model was converted from PyTorch to TensorRT.
+- [Gaze container with gaze container](https://ngc.nvidia.com/catalog/containers/nvidia:jetson-gaze):
+	- MTCNN model for face detection with input image resolution of 260X135. The model was converted from Caffe to TensorRT.
+	- NVIDIA Facial landmarks model with input resolution of 80X80 per face. The model was converted from TensorFlow to TensorRT.
+	- NVIDIA Gaze model with input resolution of 224X224 per left eye, right eye and whole face. The model was converted from TensorFlow to TensorRT.
+- [Voice container with speech recognition and Natural Language Processing](https://ngc.nvidia.com/catalog/containers/nvidia:jetson-voice):
+	- Quartznet-15X5 model for speech recognition which was converted from PyTorch to TensorRT. 
+    - BERT Base/Large models for language model for NLP which were converted from TensorFlow to TensorRT.
     
-
--   Resnet-18 model with input image size of 960X544X3. The model was converted from TensorFlow to TensorRT.
-    
-
--   [Pose container with pose detection](https://ngc.nvidia.com/catalog/containers/nvidia:jetson-pose):
-    
-
--   Resnet-18 model with input image resolution of 224X224. The model was converted from PyTorch to TensorRT.
-    
-
--   [Gaze container with gaze container](https://ngc.nvidia.com/catalog/containers/nvidia:jetson-gaze):
-    
-
--   MTCNN model for face detection with input image resolution of 260X135. The model was converted from Caffe to TensorRT.
-    
--   NVIDIA Facial landmarks model with input resolution of 80X80 per face. The model was converted from TensorFlow to TensorRT.
-    
--   NVIDIA Gaze model with input resolution of 224X224 per left eye, right eye and whole face. The model was converted from TensorFlow to TensorRT.
-    
-
--   [Voice container with speech recognition and Natural Language Processing](https://ngc.nvidia.com/catalog/containers/nvidia:jetson-voice):
-    
-
--   Quartznet-15X5 model for speech recognition which was converted from PyTorch to TensorRT.
-    
--   BERT Base model for language model for NLP which was converted from TensorFlow to TensorRT.
-    
-
 These containers provide the building blocks of the service robot use case. Making modifications and deploying to any of these applications running in the container is easy and no other container will be affected, giving zero down time and seamless update experience.
 
 ### Running the individual demo containers independently
 
 To run the demo containers individually, please refer to the instructions in the corresponding NGC pages for the containers:
 
-  
-
--   [DeepStream Container with people detection](https://ngc.nvidia.com/catalog/containers/nvidia:deepstream-peopledetection)
-    
+-   [DeepStream Container with people detection](https://ngc.nvidia.com/catalog/containers/nvidia:deepstream-peopledetection)    
 -   [Pose container with pose detection](https://ngc.nvidia.com/catalog/containers/nvidia:jetson-pose)
-    
 -   [Gaze container with gaze container](https://ngc.nvidia.com/catalog/containers/nvidia:jetson-gaze)
-    
 -   [Voice container with speech recognition and Natural Language Processing](https://ngc.nvidia.com/catalog/containers/nvidia:jetson-voice)
 
 ### Running the Cloud-Native Demo
