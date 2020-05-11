@@ -28,7 +28,7 @@ For this demo review we have developed and containerized the models, and have ho
 	- Resnet-18 model with input image size of 960X544X3. The model was converted from TensorFlow to TensorRT.
 - [Pose container with pose detection](https://ngc.nvidia.com/catalog/containers/nvidia:jetson-pose):
 	- Resnet-18 model with input image resolution of 224X224. The model was converted from PyTorch to TensorRT.
-- [Gaze container with gaze container](https://ngc.nvidia.com/catalog/containers/nvidia:jetson-gaze):
+- [Gaze container with gaze detection](https://ngc.nvidia.com/catalog/containers/nvidia:jetson-gaze):
 	- MTCNN model for face detection with input image resolution of 260X135. The model was converted from Caffe to TensorRT.
 	- NVIDIA Facial landmarks model with input resolution of 80X80 per face. The model was converted from TensorFlow to TensorRT.
 	- NVIDIA Gaze model with input resolution of 224X224 per left eye, right eye and whole face. The model was converted from TensorFlow to TensorRT.
