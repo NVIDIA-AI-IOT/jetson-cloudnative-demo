@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-CONTAINER_IMAGE="nvcr.io/nvidia/jetson-voice:jetpack_4.4_DP"
+CONTAINER_IMAGE="nvcr.io/nvidia/jetson-voice:r32.4.2"
 ASR_MODEL="quartz"
 
 show_help() {
