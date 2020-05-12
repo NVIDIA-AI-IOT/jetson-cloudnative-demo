@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-CONTAINER=nvcr.io/nvidia/gaze-demo:jetpack_4.4_DP
+CONTAINER=nvcr.io/nvidia/jetson-gaze:r32.4.2
 
 ROOT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 HOST_VIDEO_DIR="$ROOT_DIR/Videos"
