@@ -23,7 +23,7 @@ Hence these robots needs multiple AI models such as:
 
 Following the cloud native approach to application development, these individual models can be developed independently. Once an individual model is developed, it can be containerized with all dependencies included, and deployed to any Jetson device.
 
-For this demo review we have developed and containerized the models, and have hosted them on [Nvidia GPU Cloud](https://www.nvidia.com/en-us/gpu-cloud/). The demo runs seven models simultaneously as described below:
+For this demo review we have developed and containerized the models, and have hosted them on [Nvidia GPU Cloud](https://ngc.nvidia.com/catalog/containers?orderBy=modifiedDESC&pageNumber=0&query=%20label%3A%22Jetson%22&quickFilter=containers&filters=). The demo runs seven models simultaneously as described below:
 - [DeepStream Container with people detection](https://ngc.nvidia.com/catalog/containers/nvidia:deepstream-peopledetection):
 	- Resnet-18 model with input image size of 960X544X3. The model was converted from TensorFlow to TensorRT.
 - [Pose container with pose detection](https://ngc.nvidia.com/catalog/containers/nvidia:jetson-pose):
