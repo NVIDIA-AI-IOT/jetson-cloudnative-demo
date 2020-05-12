@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-CONTAINER_IMAGE="nvcr.io/nvidia/jetson-voice:jetpack_4.4_DP"
+CONTAINER_IMAGE="nvcr.io/nvidia/jetson-voice:r32.4.2"
 ROOT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
 show_help() {
