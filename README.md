@@ -122,6 +122,11 @@ First clone this repository:
 git clone https://github.com/NVIDIA-AI-IOT/jetson-cloudnative-demo
 ```
 
+Install the xdotool app by running the  command below:
+``` bash
+sudo apt-get install xdotool
+```
+
 Go to the directory
 ``` bash
 cd jetson-cloud-native-demo
