@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-CONTAINER=nvcr.io/nvidia/deepstream-peopledetection:32.4.2
+CONTAINER=nvcr.io/nvidia/deepstream-peopledetection:r32.4.2
 
 sudo nvpmodel -m 2
 sudo jetson_clocks
