@@ -129,7 +129,7 @@ sudo apt-get install xdotool
 
 Go to the directory
 ``` bash
-cd jetson-cloud-native-demo
+cd jetson-cloudnative-demo
 ```
 
 Launch the demo
