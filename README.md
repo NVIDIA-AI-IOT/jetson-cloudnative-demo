@@ -51,6 +51,8 @@ To run the demo containers individually, refer to the corresponding instructions
 
 This demo requires two items in addition to a Jetson Xavier NX Developer Kit: 1) an M.2 NVMe drive, and 2) a USB Headset with microphone such as Logitech H110 or H390.
 
+You would need to install JetPack 4.3 to run this demo on Jetson Xavier NX
+
 #### Why is NVMe Required for this Demo?
 
 Since these demo containers are not yet fully optimized for storage and memory size, this demo requires NVMe for extra storage and adding swap space for extra virtual memory. The usual path for deploying containers into production involves optimization for size and memory usage. These demo containers have not yet gone through such optimizations.
