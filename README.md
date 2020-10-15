@@ -38,6 +38,8 @@ For this demo we have developed and containerized the models, which are hosted o
 
 These containers provide the building blocks of a service robot use case. Modifying applications and deploying updates is easy because of containerization. Other containers won't be affected by updates, giving zero down time and a seamless experience.
 
+You would need to install JetPack 4.3 to run this demo on Jetson Xavier NX
+
 ### Running the individual demo containers
 
 To run the demo containers individually, refer to the corresponding instructions at each container's NGC page:
@@ -50,8 +52,6 @@ To run the demo containers individually, refer to the corresponding instructions
 ### Running the Cloud-Native Demo
 
 This demo requires two items in addition to a Jetson Xavier NX Developer Kit: 1) an M.2 NVMe drive, and 2) a USB Headset with microphone such as Logitech H110 or H390.
-
-You would need to install JetPack 4.3 to run this demo on Jetson Xavier NX
 
 #### Why is NVMe Required for this Demo?
 
